@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://cdn.bootcdn.net/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+	<script >
+	  function getQueryStringByName(name){
+		var result = location.search.match(new RegExp("[\?\&]" + name+ "=([^\&]+)","i"));
+		if(result == null || result.length < 1){
+         return "";
+		}
+		return result[1];
+	  }
+	</script>
+  </head>
+  <body>
+	<script>
+	  var code = getQueryStringByName(code)
+	  if (code) {
+        alert(code)
+      } else {
+		alert('no code')
+	  }
+	</script>
+  </body>
+</html>
