@@ -22,7 +22,7 @@
 		var base = 'https://open.weixin.qq.com/connect/oauth2/authorize?'
 		var appid = 'appid=ww3605c33768ad7b5d'
 		var url = encodeURIComponent('http://github.hskhub.com/oath.html')
-		var redirect_uri = '&redirect_uri=' + uri
+		var redirect_uri = '&redirect_uri=' + url
 		var other = '&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect'
 		window.location = base + appid + redirect_uri + other
 	  }
