@@ -2,6 +2,7 @@
 <html>
   <head>
     <script src="https://cdn.bootcdn.net/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/vConsole/3.3.4/vconsole.min.js"></script>
 	<script >
 	  function getQueryStringByName(name){
 		var result = location.search.match(new RegExp("[\?\&]" + name+ "=([^\&]+)","i"));
@@ -14,9 +15,17 @@
   </head>
   <body>
 	<script>
+	  new VConsole();
 	  var code = getQueryStringByName('code')
 	  if (code) {
         alert(code)
+		$.get(
+		  'http://localhost:3000/third/wework/get-user-by-code',
+		  'code=' + code,
+		  function (data) {
+			console.log(data)
+		  }
+		)
       } else {
 		alert('no code')
 		var base = 'https://open.weixin.qq.com/connect/oauth2/authorize?'
